@@ -103,12 +103,12 @@ a {
 }
 
 .section-shell {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1120px, calc(100% - 40px));
   margin-inline: auto;
 }
 
 .section-pad {
-  padding-block: clamp(72px, 10vw, 120px);
+  padding-block: 96px;
 }
 
 .glow-border {
@@ -137,6 +137,20 @@ a {
 
 .text-balance {
   text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .section-shell {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .section-pad {
+    padding-block: 72px;
+  }
+
+  .particle:nth-child(n + 19) {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -48,7 +48,7 @@ function IconBubble({ icon: Icon }) {
 
 function ButtonLink({ href, children, variant = 'primary' }) {
   const base =
-    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-sm font-bold transition duration-300 focus:outline-none focus:ring-2 focus:ring-cyan/70 focus:ring-offset-2 focus:ring-offset-ink';
+    'group inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-center text-sm font-bold transition duration-300 focus:outline-none focus:ring-2 focus:ring-cyan/70 focus:ring-offset-2 focus:ring-offset-ink sm:px-6';
   const styles =
     variant === 'primary'
       ? 'bg-aurora-line text-ink shadow-glow hover:scale-[1.03]'
@@ -66,7 +66,7 @@ function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-2xl">
-      <nav className="section-shell flex h-20 items-center justify-between">
+      <nav className="section-shell flex h-16 items-center justify-between sm:h-20">
         <a className="font-display text-lg font-bold text-white sm:text-xl" href="#home" onClick={() => setOpen(false)}>
           Abhyanand <span className="text-cyan">Jha</span>
         </a>
@@ -109,10 +109,10 @@ function Navbar() {
             exit={{ opacity: 0, y: -14 }}
             transition={{ duration: 0.22 }}
           >
-            <div className="glass rounded-2xl p-3">
+            <div className="glass rounded-xl p-2">
               {links.map((link) => (
                 <a
-                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.08] hover:text-cyan"
+                  className="block rounded-lg px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/[0.08] hover:text-cyan"
                   href={link.href}
                   key={link.href}
                   onClick={() => setOpen(false)}
@@ -130,37 +130,37 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="section-shell flex min-h-screen items-center pt-24" id="home">
-      <div className="grid w-full items-center gap-12 py-16 lg:grid-cols-[1fr_0.86fr] lg:py-20">
+    <section className="section-shell flex min-h-[100svh] items-center pt-20 sm:pt-24" id="home">
+      <div className="grid w-full items-center gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_0.86fr] lg:gap-12 lg:py-20">
         <motion.div variants={stagger} initial="hidden" animate="show">
           <motion.div
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm font-semibold text-cyan"
+            className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-3 py-2 text-xs font-semibold text-cyan sm:mb-6 sm:px-4 sm:text-sm"
             variants={fadeUp}
           >
             <Sparkles size={16} />
             Building intelligent, polished digital systems
           </motion.div>
           <motion.h1
-            className="text-balance font-display text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
+            className="text-balance font-display text-4xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl"
             variants={fadeUp}
           >
             Hi, I'm <span className="gradient-text">Abhyanand Jha</span>
           </motion.h1>
-          <motion.div className="mt-5 h-9 overflow-hidden text-xl font-semibold text-cyan sm:text-2xl" variants={fadeUp}>
+          <motion.div className="mt-5 h-8 overflow-hidden text-lg font-semibold text-cyan sm:h-9 sm:text-2xl" variants={fadeUp}>
             <motion.div
               animate={{ y: ['0%', '-33.333%', '-66.666%', '0%'] }}
               transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <p className="h-9">Software Engineer</p>
-              <p className="h-9">AI & Full Stack Enthusiast</p>
-              <p className="h-9">Problem Solver</p>
+              <p className="h-8 sm:h-9">Software Engineer</p>
+              <p className="h-8 sm:h-9">AI & Full Stack Enthusiast</p>
+              <p className="h-8 sm:h-9">Problem Solver</p>
             </motion.div>
           </motion.div>
-          <motion.p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300" variants={fadeUp}>
+          <motion.p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8" variants={fadeUp}>
             I craft fast, modern interfaces and intelligent software experiences with a strong focus on clean
             engineering, practical AI, and details that make products feel exceptional.
           </motion.p>
-          <motion.div className="mt-9 flex flex-col gap-4 sm:flex-row" variants={fadeUp}>
+          <motion.div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4" variants={fadeUp}>
             <ButtonLink href="#projects">
               View Projects
               <ArrowRight size={18} />
@@ -187,14 +187,14 @@ function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto w-full max-w-[520px]"
+          className="relative mx-auto w-full max-w-[420px] sm:max-w-[520px]"
           initial={{ opacity: 0, scale: 0.92, y: 28 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
         >
           <div className="absolute inset-8 rounded-full bg-cyan/20 blur-3xl" />
           <motion.div
-            className="glass hero-visual-mask relative aspect-square overflow-hidden rounded-[2rem] border-cyan/20"
+            className="glass hero-visual-mask relative aspect-square overflow-hidden rounded-2xl border-cyan/20 sm:rounded-[2rem]"
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           >
@@ -206,20 +206,20 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
           </motion.div>
           <motion.div
-            className="glass absolute -bottom-3 left-2 rounded-2xl px-4 py-3 sm:left-6"
+            className="glass absolute bottom-2 left-2 max-w-[62%] rounded-xl px-3 py-2 sm:-bottom-3 sm:left-6 sm:max-w-none sm:px-4 sm:py-3"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Focus</p>
-            <p className="mt-1 font-display text-lg font-bold text-white">AI-ready products</p>
+            <p className="mt-1 font-display text-sm font-bold text-white sm:text-lg">AI-ready products</p>
           </motion.div>
           <motion.div
-            className="glass absolute -right-1 top-8 rounded-2xl px-4 py-3 sm:right-4"
+            className="glass absolute right-2 top-4 max-w-[45%] rounded-xl px-3 py-2 sm:right-4 sm:top-8 sm:max-w-none sm:px-4 sm:py-3"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5.6, repeat: Infinity, ease: 'easeInOut' }}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Stack</p>
-            <p className="mt-1 font-display text-lg font-bold text-cyan">React + AI</p>
+            <p className="mt-1 font-display text-sm font-bold text-cyan sm:text-lg">React + AI</p>
           </motion.div>
         </motion.div>
       </div>
@@ -307,14 +307,14 @@ function Projects() {
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
-            <MotionCard className="flex min-h-[320px] flex-col" delay={index * 0.06} key={project.title}>
+            <MotionCard className="flex min-h-[300px] flex-col sm:min-h-[320px]" delay={index * 0.06} key={project.title}>
               <div className="flex items-start justify-between gap-4">
                 <IconBubble icon={project.icon} />
                 <span className="rounded-full border border-cyan/20 bg-cyan/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-cyan">
                   Featured
                 </span>
               </div>
-              <h3 className="mt-6 font-display text-2xl font-bold text-white">{project.title}</h3>
+              <h3 className="mt-6 font-display text-xl font-bold text-white sm:text-2xl">{project.title}</h3>
               <p className="mt-3 flex-1 leading-7 text-slate-300">{project.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {project.tech.map((tag) => (
@@ -323,7 +323,7 @@ function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-7 flex gap-3">
+              <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row">
                 <a
                   className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.08] text-sm font-bold text-white transition hover:border-cyan/40 hover:text-cyan"
                   href="https://github.com/abhijha910"
@@ -374,9 +374,9 @@ function Experience() {
                   index % 2 === 0 ? 'sm:left-auto sm:right-[-8px]' : 'sm:left-[-8px]'
                 }`}
               />
-              <div className="glass ml-10 w-full rounded-2xl p-6 sm:ml-0">
-                <p className="font-display text-2xl font-bold text-cyan">{item.period}</p>
-                <h3 className="mt-2 font-display text-xl font-bold text-white">{item.role}</h3>
+              <div className="glass ml-10 w-full rounded-xl p-5 sm:ml-0 sm:p-6">
+                <p className="font-display text-xl font-bold text-cyan sm:text-2xl">{item.period}</p>
+                <h3 className="mt-2 font-display text-lg font-bold text-white sm:text-xl">{item.role}</h3>
                 <p className="mt-3 leading-7 text-slate-300">{item.description}</p>
               </div>
             </motion.div>
@@ -430,11 +430,11 @@ function Contact() {
         />
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
           <MotionCard>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-center">
               <IconBubble icon={Mail} />
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Email</p>
-                <a className="mt-1 block break-all font-display text-xl font-bold text-white" href="mailto:abhayanandjha05@gmail.com">
+                <a className="mt-1 block break-all font-display text-lg font-bold text-white sm:text-xl" href="mailto:abhayanandjha05@gmail.com">
                   abhayanandjha05@gmail.com
                 </a>
               </div>
@@ -483,7 +483,7 @@ function Contact() {
                 required
               />
               <button
-                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-aurora-line px-6 text-sm font-bold text-ink shadow-glow transition hover:scale-[1.02]"
+                className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-aurora-line px-5 text-center text-sm font-bold text-ink shadow-glow transition hover:scale-[1.02] sm:px-6"
                 type="submit"
               >
                 Send Message
@@ -497,7 +497,7 @@ function Contact() {
       <AnimatePresence>
         {sent ? (
           <motion.div
-            className="fixed bottom-6 left-1/2 z-50 w-[calc(100%-32px)] max-w-md -translate-x-1/2 rounded-2xl border border-cyan/25 bg-ink/90 px-5 py-4 text-center font-semibold text-cyan shadow-glow backdrop-blur-xl"
+            className="fixed bottom-5 left-1/2 z-50 w-[calc(100%-28px)] max-w-md -translate-x-1/2 rounded-xl border border-cyan/25 bg-ink/90 px-4 py-4 text-center text-sm font-semibold text-cyan shadow-glow backdrop-blur-xl sm:bottom-6 sm:px-5 sm:text-base"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
