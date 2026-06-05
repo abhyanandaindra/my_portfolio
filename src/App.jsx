@@ -401,30 +401,56 @@ function Experience() {
     <section className="section-pad" id="experience">
       <div className="section-shell">
         <SectionHeading
-          eyebrow="Journey"
-          title="A focused path through software, AI, and product craft"
-          description="A clean placeholder timeline that can be swapped with internships, roles, education, or milestones as the portfolio grows."
+          eyebrow="Experience"
+          title="Real engineering experience across product, backend, and UI"
+          description="A practical software engineering path spanning full-stack development, scalable systems, Agile collaboration, and modern frontend delivery."
         />
-        <div className="relative mx-auto max-w-3xl">
-          <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-cyan via-violet to-transparent sm:left-1/2" />
+        <div className="relative mx-auto max-w-5xl">
+          <div className="absolute left-4 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-cyan via-violet to-transparent sm:left-6" />
           {journey.map((item, index) => (
             <motion.div
-              className={`relative mb-8 flex sm:w-1/2 ${index % 2 === 0 ? 'sm:pr-8' : 'sm:ml-auto sm:pl-8'}`}
+              className="relative mb-6 pl-12 sm:pl-16"
               initial={{ opacity: 0, y: 30 }}
-              key={item.period}
+              key={`${item.company}-${item.period}`}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true, margin: '-80px' }}
               whileInView={{ opacity: 1, y: 0 }}
             >
-              <span
-                className={`absolute left-2 top-7 h-4 w-4 rounded-full border-2 border-cyan bg-ink shadow-glow ${
-                  index % 2 === 0 ? 'sm:left-auto sm:right-[-8px]' : 'sm:left-[-8px]'
-                }`}
-              />
-              <div className="glass ml-10 w-full rounded-xl p-5 sm:ml-0 sm:p-6">
-                <p className="font-display text-xl font-bold text-cyan sm:text-2xl">{item.period}</p>
-                <h3 className="mt-2 font-display text-lg font-bold text-white sm:text-xl">{item.role}</h3>
-                <p className="mt-3 leading-7 text-slate-300">{item.description}</p>
+              <span className="absolute left-[9px] top-7 h-4 w-4 rounded-full border-2 border-cyan bg-ink shadow-glow sm:left-[17px]" />
+              <div className="glass glow-border rounded-xl p-5 sm:p-6">
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="font-display text-xl font-bold text-white sm:text-2xl">{item.company}</h3>
+                      {item.location ? (
+                        <span className="rounded-full border border-white/10 bg-white/[0.08] px-3 py-1 text-xs font-semibold text-slate-300">
+                          {item.location}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p className="mt-2 font-semibold text-cyan">{item.role}</p>
+                  </div>
+                  <span className="w-fit rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm font-bold text-cyan">
+                    {item.period}
+                  </span>
+                </div>
+
+                <ul className="mt-5 space-y-3">
+                  {item.highlights.map((highlight) => (
+                    <li className="flex gap-3 leading-7 text-slate-300" key={highlight}>
+                      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan shadow-glow" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {item.tech.map((tag) => (
+                    <span className="rounded-full bg-white/[0.08] px-3 py-1 text-xs font-semibold text-slate-300" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

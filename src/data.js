@@ -29,7 +29,7 @@ export const links = [
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/abhijha910', icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin },
+  { label: 'LinkedIn', href: 'https://in.linkedin.com/in/abhyanand-jha-9392a0209', icon: Linkedin },
   { label: 'Twitter/X', href: 'https://x.com/yourusername', icon: Twitter },
 ];
 
@@ -127,19 +127,49 @@ export const projects = [
 
 export const journey = [
   {
-    period: '2026',
-    role: 'AI & Full Stack Focus',
-    description: 'Building polished web experiences while deepening practical AI, automation, and cloud deployment skills.',
+    company: 'Aindra Systems',
+    period: 'Aug 2025 - Present',
+    role: 'Software Engineer',
+    highlights: [
+      'Designed, developed, and maintained scalable software systems using Java, Python, C++, and Linux.',
+      'Built responsive web applications using Spring Boot, Flask, HTML, CSS, and JavaScript.',
+      'Developed optimized backend and full-stack applications using Spring MVC, Hibernate, Servlets, and MySQL.',
+      'Debugged and optimized applications to improve performance, scalability, and quality compliance.',
+      'Researched and applied emerging technologies and algorithms to support product innovation.',
+    ],
+    tech: ['Java', 'Python', 'C++', 'Linux', 'Spring Boot', 'Flask', 'MySQL'],
   },
   {
-    period: '2025',
-    role: 'Software Engineering Projects',
-    description: 'Delivered frontend-heavy applications with clean architecture, reusable components, and responsive interfaces.',
+    company: 'NATS Apprenticeship',
+    period: 'Sep 2024 - Aug 2025',
+    role: 'Software Development Engineer Trainee',
+    highlights: [
+      'Worked on real-world software development projects in a professional engineering environment.',
+      'Collaborated with cross-functional teams while following Agile methodologies and delivery practices.',
+    ],
+    tech: ['Software Development', 'Agile', 'Team Collaboration'],
   },
   {
-    period: '2024',
-    role: 'Problem Solving Foundation',
-    description: 'Strengthened programming fundamentals, data structures, debugging habits, and disciplined engineering workflows.',
+    company: 'GrapplTech',
+    period: 'Jul 2024 - Aug 2024',
+    role: 'Software Development Engineer Intern',
+    location: 'Virtual',
+    highlights: [
+      'Built a responsive hero section using HTML, CSS, JavaScript, and React.js.',
+      'Ensured accessibility, responsive behavior, and modern UI quality across devices.',
+    ],
+    tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Accessibility'],
+  },
+  {
+    company: 'Smart Internz',
+    period: 'Nov 2023 - Jan 2024',
+    role: 'Salesforce Developer Intern',
+    location: 'Virtual',
+    highlights: [
+      'Worked on Salesforce development from fundamentals through Lightning Web Components.',
+      'Earned Apex Specialist Super Badge and Process Automation Specialist badges.',
+    ],
+    tech: ['Salesforce', 'Apex', 'Lightning Web Components', 'Process Automation'],
   },
 ];
 
