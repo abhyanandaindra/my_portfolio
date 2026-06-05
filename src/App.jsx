@@ -19,6 +19,7 @@ import {
   journey,
   links,
   projects,
+  resumeUrl,
   skills,
   socials,
   strengths,
@@ -165,7 +166,7 @@ function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ButtonLink href="/resume.pdf" variant="secondary">
+          <ButtonLink href={resumeUrl} variant="secondary">
             Resume
             <Download size={16} />
           </ButtonLink>
@@ -246,7 +247,7 @@ function Hero() {
               View Projects
               <ArrowRight size={18} />
             </ButtonLink>
-            <ButtonLink href="/resume.pdf" variant="secondary">
+            <ButtonLink href={resumeUrl} variant="secondary">
               Download Resume
               <Download size={18} />
             </ButtonLink>
@@ -372,7 +373,7 @@ function Projects() {
               <div className="mt-7 flex flex-col gap-3 min-[420px]:flex-row">
                 <a
                   className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.08] text-sm font-bold text-white transition hover:border-cyan/40 hover:text-cyan"
-                  href="https://github.com/abhijha910"
+                  href={project.githubUrl || 'https://github.com/abhijha910'}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -381,7 +382,7 @@ function Projects() {
                 </a>
                 <a
                   className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full bg-white text-sm font-bold text-ink transition hover:bg-cyan"
-                  href="#home"
+                  href={project.liveUrl || '#home'}
                 >
                   Demo
                   <ArrowRight size={15} />

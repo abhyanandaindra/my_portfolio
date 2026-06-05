@@ -33,6 +33,8 @@ export const socials = [
   { label: 'Twitter/X', href: 'https://x.com/yourusername', icon: Twitter },
 ];
 
+export const resumeUrl = 'https://drive.google.com/file/d/1XEKZqusIFFELOh077eIkkaO8Z9yzIWoz/view?usp=drivesdk';
+
 export const strengths = [
   {
     title: 'Clean Code',
@@ -85,10 +87,11 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'AI Resume Analyzer',
-    description: 'An intelligent resume review interface with scoring flows, role matching, and actionable optimization insights.',
-    tech: ['React', 'Python', 'AI', 'Tailwind'],
+    title: 'AI Life Admin',
+    description: 'A full-stack AI assistant that processes emails and documents, extracts tasks, predicts schedules, and generates daily action plans.',
+    tech: ['FastAPI', 'React', 'PostgreSQL', 'TypeScript'],
     icon: BrainCircuit,
+    githubUrl: 'https://github.com/abhijha910/ai-life-admin',
   },
   {
     title: 'Smart Portfolio Builder',
