@@ -61,6 +61,87 @@ function ButtonLink({ href, children, variant = 'primary' }) {
   );
 }
 
+function ProfileVisual() {
+  const [imageLoaded, setImageLoaded] = useState(true);
+
+  return (
+    <motion.div
+      className="relative mx-auto flex w-full max-w-[420px] items-center justify-center pb-20 pt-8 sm:max-w-[500px] sm:pb-24 lg:py-0 lg:pb-24"
+      initial={{ opacity: 0, scale: 0.92, y: 28 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: 'easeOut' }}
+    >
+      <div className="absolute left-1/2 top-1/2 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan/20 blur-3xl" />
+      <div className="absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/20 blur-3xl" />
+      <div className="glass absolute inset-x-10 top-10 h-64 rotate-[-7deg] rounded-3xl opacity-70 sm:inset-x-12 sm:h-80">
+        <img
+          alt=""
+          aria-hidden="true"
+          className="h-full w-full rounded-3xl object-cover opacity-25 saturate-150"
+          src="/assets/hero-ai-core.png"
+        />
+      </div>
+
+      <motion.div
+        className="portrait-orbit absolute inset-3 rounded-full sm:inset-4"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
+      />
+
+      <motion.div
+        className="relative z-10 w-full max-w-[310px] sm:max-w-[380px]"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <div className="rounded-full bg-aurora-line p-[2px] shadow-glow">
+          <div className="rounded-full bg-ink p-3 sm:p-4">
+            <div className="relative aspect-square overflow-hidden rounded-full border border-white/15 bg-gradient-to-br from-slate-950 via-slate-900 to-ink">
+              {imageLoaded ? (
+                <img
+                  alt="Portrait of Abhyanand Jha"
+                  className="h-full w-full object-cover object-[50%_18%]"
+                  onError={() => setImageLoaded(false)}
+                  src="/assets/profile-photo.png"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-aurora-line">
+                  <div className="flex h-28 w-28 items-center justify-center rounded-full border border-ink/20 bg-ink/90 font-display text-4xl font-bold text-cyan shadow-glow">
+                    AJ
+                  </div>
+                </div>
+              )}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-ink/30 via-transparent to-white/5" />
+            </div>
+          </div>
+        </div>
+
+        <div className="glass relative z-30 mx-auto mt-4 w-[86%] rounded-2xl px-5 py-4 text-center shadow-violet">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">Abhyanand Jha</p>
+          <p className="mt-1 font-display text-base font-bold text-white sm:text-lg">Software Engineer</p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="glass absolute bottom-8 left-2 z-20 rounded-xl px-3 py-2 sm:bottom-10 sm:left-0 sm:px-4 sm:py-3 lg:-left-2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Focus</p>
+        <p className="mt-1 font-display text-sm font-bold text-white sm:text-lg">AI-ready products</p>
+      </motion.div>
+
+      <motion.div
+        className="glass absolute right-0 top-8 z-20 rounded-xl px-3 py-2 sm:right-2 sm:top-12 sm:px-4 sm:py-3"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 5.6, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Stack</p>
+        <p className="mt-1 font-display text-sm font-bold text-cyan sm:text-lg">React + AI</p>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -186,42 +267,7 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="relative mx-auto w-full max-w-[420px] sm:max-w-[520px]"
-          initial={{ opacity: 0, scale: 0.92, y: 28 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-        >
-          <div className="absolute inset-8 rounded-full bg-cyan/20 blur-3xl" />
-          <motion.div
-            className="glass hero-visual-mask relative aspect-square overflow-hidden rounded-2xl border-cyan/20 sm:rounded-[2rem]"
-            animate={{ y: [0, -14, 0] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <img
-              alt="Futuristic AI processor core with luminous neural network threads"
-              className="h-full w-full object-cover"
-              src="/assets/hero-ai-core.png"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
-          </motion.div>
-          <motion.div
-            className="glass absolute bottom-2 left-2 max-w-[62%] rounded-xl px-3 py-2 sm:-bottom-3 sm:left-6 sm:max-w-none sm:px-4 sm:py-3"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Focus</p>
-            <p className="mt-1 font-display text-sm font-bold text-white sm:text-lg">AI-ready products</p>
-          </motion.div>
-          <motion.div
-            className="glass absolute right-2 top-4 max-w-[45%] rounded-xl px-3 py-2 sm:right-4 sm:top-8 sm:max-w-none sm:px-4 sm:py-3"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5.6, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Stack</p>
-            <p className="mt-1 font-display text-sm font-bold text-cyan sm:text-lg">React + AI</p>
-          </motion.div>
-        </motion.div>
+        <ProfileVisual />
       </div>
     </section>
   );
