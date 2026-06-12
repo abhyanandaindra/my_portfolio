@@ -18,42 +18,64 @@ import {
   Wand2,
 } from 'lucide-react';
 
+export const profile = {
+  name: 'Abhyanand Jha',
+  email: 'abhayanandjha05@gmail.com',
+  title: 'Software Engineer | AI & Full Stack Enthusiast',
+  intro:
+    'A software engineer building intelligent interfaces, scalable systems, and AI-powered product experiences with cinematic precision.',
+  resumeUrl: 'https://drive.google.com/file/d/1XEKZqusIFFELOh077eIkkaO8Z9yzIWoz/view?usp=drivesdk',
+  photoUrl: '/assets/profile-photo.png',
+};
+
 export const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Arrival', href: '#home' },
+  { label: 'Discovery', href: '#about' },
+  { label: 'Galaxy', href: '#skills' },
+  { label: 'Worlds', href: '#projects' },
+  { label: 'Timeline', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/abhijha910', icon: Github },
-  { label: 'LinkedIn', href: 'https://in.linkedin.com/in/abhyanand-jha-9392a0209', icon: Linkedin },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin },
   { label: 'Twitter/X', href: 'https://x.com/yourusername', icon: Twitter },
 ];
 
-export const resumeUrl = 'https://drive.google.com/file/d/1XEKZqusIFFELOh077eIkkaO8Z9yzIWoz/view?usp=drivesdk';
+export const bootLines = [
+  'Initializing...',
+  'Loading Engineer Profile...',
+  'Building Neural Interface...',
+  'Calibrating Project Worlds...',
+  'Welcome',
+];
+
+export const systemSignals = [
+  { label: 'Interface', value: 'Cinematic' },
+  { label: 'Stack', value: 'AI + Full Stack' },
+  { label: 'Mode', value: 'Build Systems' },
+];
 
 export const strengths = [
   {
     title: 'Clean Code',
-    description: 'Readable, maintainable implementations with a bias for clarity and long-term ownership.',
+    description: 'Readable architecture, clear ownership, and implementation choices built for future velocity.',
     icon: Code2,
   },
   {
     title: 'Scalable Systems',
-    description: 'Thoughtful architecture, reusable interfaces, and performance-aware engineering choices.',
+    description: 'Backends, APIs, and product surfaces designed to stay reliable as complexity grows.',
     icon: Cpu,
   },
   {
     title: 'AI Solutions',
-    description: 'Practical ML and AI workflows that turn raw data into useful, human-centered products.',
+    description: 'Useful AI workflows that transform raw information into decisions, automation, and leverage.',
     icon: BrainCircuit,
   },
   {
     title: 'Modern UI/UX',
-    description: 'Responsive interfaces with strong visual hierarchy, smooth motion, and refined details.',
+    description: 'High-polish interfaces with motion, hierarchy, accessibility, and responsive depth.',
     icon: Wand2,
   },
 ];
@@ -62,25 +84,25 @@ export const skills = [
   {
     category: 'Frontend',
     icon: MonitorSmartphone,
-    level: 92,
+    detail: 'Interface systems, motion, responsive architecture, and user-facing product polish.',
     items: ['React', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'HTML', 'CSS'],
   },
   {
     category: 'Backend Knowledge',
     icon: TerminalSquare,
-    level: 78,
-    items: ['Node.js', 'Express', 'APIs', 'REST', 'Auth Flows', 'Integrations'],
+    detail: 'API thinking, service design, integrations, data flow, and product infrastructure.',
+    items: ['Node.js', 'Express', 'APIs'],
   },
   {
     category: 'AI/ML',
     icon: BrainCircuit,
-    level: 84,
-    items: ['Python', 'Machine Learning', 'Data Science', 'Model Workflows', 'Automation'],
+    detail: 'Data-driven features, ML fundamentals, intelligent automation, and AI product workflows.',
+    items: ['Python', 'Machine Learning', 'Data Science'],
   },
   {
     category: 'Tools',
     icon: GitBranch,
-    level: 88,
+    detail: 'Daily engineering operations across version control, cloud tools, editors, and Linux environments.',
     items: ['Git', 'GitHub', 'VS Code', 'Linux', 'Firebase', 'GCP'],
   },
 ];
@@ -88,88 +110,86 @@ export const skills = [
 export const projects = [
   {
     title: 'AI Life Admin',
-    description: 'A full-stack AI assistant that processes emails and documents, extracts tasks, predicts schedules, and generates daily action plans.',
-    tech: ['FastAPI', 'React', 'PostgreSQL', 'TypeScript'],
+    subtitle: 'AI-powered personal operations system',
+    description: 'A focused admin experience for organizing life, workflows, intelligent actions, and productivity signals in one clean control plane.',
+    tech: ['React', 'AI', 'Dashboard', 'Automation'],
     icon: BrainCircuit,
+    tone: 'cyan',
     githubUrl: 'https://github.com/abhijha910/ai-life-admin',
+    demoUrl: 'https://github.com/abhijha910/ai-life-admin',
   },
   {
     title: 'Smart Portfolio Builder',
-    description: 'A guided portfolio-generation experience with polished templates, content prompts, and instant previews.',
+    subtitle: 'Automated identity system',
+    description: 'A guided portfolio-generation experience with content prompts, polished templates, and instant previews.',
     tech: ['React', 'Vite', 'Framer Motion'],
     icon: Rocket,
+    tone: 'violet',
+    githubUrl: 'https://github.com/abhijha910',
+    demoUrl: 'https://github.com/abhijha910',
   },
   {
     title: 'Cloud Security Dashboard',
-    description: 'A security operations UI for posture monitoring, incident triage, risk scoring, and compliance snapshots.',
+    subtitle: 'Risk visibility command center',
+    description: 'Security operations UI for posture monitoring, incident triage, compliance views, and risk scoring.',
     tech: ['React', 'GCP', 'APIs', 'Charts'],
     icon: ShieldCheck,
+    tone: 'blue',
+    githubUrl: 'https://github.com/abhijha910',
+    demoUrl: 'https://github.com/abhijha910',
   },
   {
     title: 'Real-Time Analytics UI',
-    description: 'A responsive data product for live KPIs, streaming metrics, anomaly cues, and executive-ready reporting.',
+    subtitle: 'Live decision cockpit',
+    description: 'Streaming KPI interface with anomaly cues, executive reporting, and live product intelligence.',
     tech: ['TypeScript', 'WebSockets', 'Data Viz'],
     icon: LineChart,
+    tone: 'cyan',
+    githubUrl: 'https://github.com/abhijha910',
+    demoUrl: 'https://github.com/abhijha910',
   },
   {
     title: 'E-Commerce Frontend',
-    description: 'A premium storefront with product discovery, cart interactions, refined filters, and conversion-focused details.',
+    subtitle: 'Conversion-focused storefront',
+    description: 'Premium shopping surface with product discovery, filtering, cart motion, and clean checkout flow.',
     tech: ['React', 'Tailwind', 'UX'],
     icon: Cloud,
+    tone: 'violet',
+    githubUrl: 'https://github.com/abhijha910',
+    demoUrl: 'https://github.com/abhijha910',
   },
   {
     title: 'Task Management App',
-    description: 'A focused productivity dashboard for task planning, sprint views, status tracking, and team coordination.',
+    subtitle: 'Execution operating layer',
+    description: 'Focused productivity workspace for planning, sprint views, task state, and team coordination.',
     tech: ['React', 'Firebase', 'APIs'],
     icon: DatabaseZap,
+    tone: 'blue',
+    githubUrl: 'https://github.com/abhijha910',
+    demoUrl: 'https://github.com/abhijha910',
   },
 ];
 
-export const journey = [
+export const milestones = [
   {
-    company: 'Aindra Systems',
-    period: 'Aug 2025 - Present',
-    role: 'Software Engineer',
-    highlights: [
-      'Designed, developed, and maintained scalable software systems using Java, Python, C++, and Linux.',
-      'Built responsive web applications using Spring Boot, Flask, HTML, CSS, and JavaScript.',
-      'Developed optimized backend and full-stack applications using Spring MVC, Hibernate, Servlets, and MySQL.',
-      'Debugged and optimized applications to improve performance, scalability, and quality compliance.',
-      'Researched and applied emerging technologies and algorithms to support product innovation.',
-    ],
-    tech: ['Java', 'Python', 'C++', 'Linux', 'Spring Boot', 'Flask', 'MySQL'],
+    stage: 'Arrival',
+    title: 'Problem Solver',
+    body: 'The foundation: debugging, programming discipline, and learning how to convert ambiguous problems into shippable logic.',
   },
   {
-    company: 'NATS Apprenticeship',
-    period: 'Sep 2024 - Aug 2025',
-    role: 'Software Development Engineer Trainee',
-    highlights: [
-      'Worked on real-world software development projects in a professional engineering environment.',
-      'Collaborated with cross-functional teams while following Agile methodologies and delivery practices.',
-    ],
-    tech: ['Software Development', 'Agile', 'Team Collaboration'],
+    stage: 'Discovery',
+    title: 'Full Stack Builder',
+    body: 'Expanding across frontend, APIs, cloud workflows, and product architecture to build complete experiences.',
   },
   {
-    company: 'GrapplTech',
-    period: 'Jul 2024 - Aug 2024',
-    role: 'Software Development Engineer Intern',
-    location: 'Virtual',
-    highlights: [
-      'Built a responsive hero section using HTML, CSS, JavaScript, and React.js.',
-      'Ensured accessibility, responsive behavior, and modern UI quality across devices.',
-    ],
-    tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Accessibility'],
+    stage: 'Exploration',
+    title: 'AI Engineer Mindset',
+    body: 'Applying AI, machine learning, and data workflows to create systems that understand, assist, and automate.',
   },
   {
-    company: 'Smart Internz',
-    period: 'Nov 2023 - Jan 2024',
-    role: 'Salesforce Developer Intern',
-    location: 'Virtual',
-    highlights: [
-      'Worked on Salesforce development from fundamentals through Lightning Web Components.',
-      'Earned Apex Specialist Super Badge and Process Automation Specialist badges.',
-    ],
-    tech: ['Salesforce', 'Apex', 'Lightning Web Components', 'Process Automation'],
+    stage: 'Immersion',
+    title: 'Product Craft',
+    body: 'Polishing interfaces with motion, usability, visual hierarchy, and a cinematic sense of interaction.',
   },
 ];
 
