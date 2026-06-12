@@ -39,7 +39,7 @@ export const links = [
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/abhijha910', icon: Github },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin },
+  { label: 'LinkedIn', href: 'https://in.linkedin.com/in/abhyanand-jha-9392a0209', icon: Linkedin },
   { label: 'Twitter/X', href: 'https://x.com/yourusername', icon: Twitter },
 ];
 
@@ -110,9 +110,9 @@ export const skills = [
 export const projects = [
   {
     title: 'AI Life Admin',
-    subtitle: 'AI-powered personal operations system',
-    description: 'A focused admin experience for organizing life, workflows, intelligent actions, and productivity signals in one clean control plane.',
-    tech: ['React', 'AI', 'Dashboard', 'Automation'],
+    subtitle: 'Full-stack AI assistant',
+    description: 'Processes emails and documents, extracts tasks, predicts schedules, and generates daily action plans through an AI-powered productivity workflow.',
+    tech: ['FastAPI', 'React', 'PostgreSQL', 'TypeScript'],
     icon: BrainCircuit,
     tone: 'cyan',
     githubUrl: 'https://github.com/abhijha910/ai-life-admin',
@@ -120,8 +120,8 @@ export const projects = [
   },
   {
     title: 'Smart Portfolio Builder',
-    subtitle: 'Automated identity system',
-    description: 'A guided portfolio-generation experience with content prompts, polished templates, and instant previews.',
+    subtitle: 'Guided portfolio-generation experience',
+    description: 'A guided portfolio-generation experience with polished templates, content prompts, and instant previews.',
     tech: ['React', 'Vite', 'Framer Motion'],
     icon: Rocket,
     tone: 'violet',
@@ -130,8 +130,8 @@ export const projects = [
   },
   {
     title: 'Cloud Security Dashboard',
-    subtitle: 'Risk visibility command center',
-    description: 'Security operations UI for posture monitoring, incident triage, compliance views, and risk scoring.',
+    subtitle: 'Security operations UI',
+    description: 'A security operations UI for posture monitoring, incident triage, risk scoring, and compliance snapshots.',
     tech: ['React', 'GCP', 'APIs', 'Charts'],
     icon: ShieldCheck,
     tone: 'blue',
@@ -140,8 +140,8 @@ export const projects = [
   },
   {
     title: 'Real-Time Analytics UI',
-    subtitle: 'Live decision cockpit',
-    description: 'Streaming KPI interface with anomaly cues, executive reporting, and live product intelligence.',
+    subtitle: 'Live KPI intelligence interface',
+    description: 'A responsive data product for live KPIs, streaming metrics, anomaly cues, and executive-ready reporting.',
     tech: ['TypeScript', 'WebSockets', 'Data Viz'],
     icon: LineChart,
     tone: 'cyan',
@@ -150,8 +150,8 @@ export const projects = [
   },
   {
     title: 'E-Commerce Frontend',
-    subtitle: 'Conversion-focused storefront',
-    description: 'Premium shopping surface with product discovery, filtering, cart motion, and clean checkout flow.',
+    subtitle: 'Premium conversion storefront',
+    description: 'A premium storefront with product discovery, cart interactions, refined filters, and conversion-focused details.',
     tech: ['React', 'Tailwind', 'UX'],
     icon: Cloud,
     tone: 'violet',
@@ -172,24 +172,51 @@ export const projects = [
 
 export const milestones = [
   {
-    stage: 'Arrival',
-    title: 'Problem Solver',
-    body: 'The foundation: debugging, programming discipline, and learning how to convert ambiguous problems into shippable logic.',
+    company: 'Aindra Systems',
+    period: 'Aug 2025 - Present',
+    role: 'Software Engineer',
+    location: '',
+    highlights: [
+      'Designed, developed, and maintained scalable software systems using Java, Python, C++, and Linux.',
+      'Built responsive web applications using Spring Boot, Flask, HTML, CSS, and JavaScript.',
+      'Developed optimized backend and full-stack applications using Spring MVC, Hibernate, Servlets, and MySQL.',
+      'Debugged and optimized applications to improve performance, scalability, and quality compliance.',
+      'Researched and applied emerging technologies and algorithms to support product innovation.',
+    ],
+    tech: ['Java', 'Python', 'C++', 'Linux', 'Spring Boot', 'Flask', 'MySQL'],
   },
   {
-    stage: 'Discovery',
-    title: 'Full Stack Builder',
-    body: 'Expanding across frontend, APIs, cloud workflows, and product architecture to build complete experiences.',
+    company: 'NATS Apprenticeship',
+    period: 'Sep 2024 - Aug 2025',
+    role: 'Software Development Engineer Trainee',
+    location: '',
+    highlights: [
+      'Worked on real-world software development projects in a professional engineering environment.',
+      'Collaborated with cross-functional teams while following Agile methodologies and delivery practices.',
+    ],
+    tech: ['Software Development', 'Agile', 'Team Collaboration'],
   },
   {
-    stage: 'Exploration',
-    title: 'AI Engineer Mindset',
-    body: 'Applying AI, machine learning, and data workflows to create systems that understand, assist, and automate.',
+    company: 'GrapplTech',
+    period: 'Jul 2024 - Aug 2024',
+    role: 'Software Development Engineer Intern',
+    location: 'Virtual',
+    highlights: [
+      'Built a responsive hero section using HTML, CSS, JavaScript, and React.js.',
+      'Ensured accessibility, responsive behavior, and modern UI quality across devices.',
+    ],
+    tech: ['React.js', 'JavaScript', 'HTML', 'CSS', 'Accessibility'],
   },
   {
-    stage: 'Immersion',
-    title: 'Product Craft',
-    body: 'Polishing interfaces with motion, usability, visual hierarchy, and a cinematic sense of interaction.',
+    company: 'Smart Internz',
+    period: 'Nov 2023 - Jan 2024',
+    role: 'Salesforce Developer Intern',
+    location: 'Virtual',
+    highlights: [
+      'Worked on Salesforce development from fundamentals through Lightning Web Components.',
+      'Earned Apex Specialist Super Badge and Process Automation Specialist badges.',
+    ],
+    tech: ['Salesforce', 'Apex', 'Lightning Web Components', 'Process Automation'],
   },
 ];
 

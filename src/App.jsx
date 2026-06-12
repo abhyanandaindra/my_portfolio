@@ -11,6 +11,9 @@ import {
   ArrowRight,
   ArrowUp,
   BrainCircuit,
+  BriefcaseBusiness,
+  CalendarDays,
+  CheckCircle2,
   Download,
   ExternalLink,
   Mail,
@@ -504,31 +507,85 @@ function ProjectWorlds() {
 function Journey() {
   const { scrollYProgress } = useScroll();
   const progress = useTransform(scrollYProgress, [0.38, 0.72], ['0%', '100%']);
+  const totalHighlights = milestones.reduce((count, item) => count + item.highlights.length, 0);
+  const coreTechnologies = [...new Set(milestones.flatMap((item) => item.tech))].slice(0, 9);
 
   return (
     <section className="universe-section" id="experience">
       <div className="mx-auto w-[min(1180px,calc(100%-32px))]">
         <SectionIntro
           eyebrow="Exploration"
-          title="The journey is an interactive signal path"
-          description="A non-linear story of how engineering foundations become AI products, polished interfaces, and scalable systems."
+          title="Professional journey through software systems"
+          description="Real engineering experience across scalable systems, full-stack development, AI-focused products, Agile teams, and modern frontend delivery."
         />
-        <div className="journey-rail">
-          <motion.div className="journey-progress" style={{ height: progress }} />
-          {milestones.map((item, index) => (
-            <motion.div
-              className="milestone os-panel"
-              initial={{ opacity: 0, x: index % 2 ? 70 : -70, filter: 'blur(12px)' }}
-              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-              viewport={{ once: true, margin: '-120px' }}
-              transition={revealTransition}
-              key={item.title}
-            >
-              <span>{item.stage}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </motion.div>
-          ))}
+        <div className="journey-system">
+          <motion.aside
+            className="journey-console os-panel"
+            initial={{ opacity: 0, x: -38, filter: 'blur(14px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-120px' }}
+            transition={revealTransition}
+          >
+            <div className="journey-console-orb">
+              <BriefcaseBusiness size={28} />
+            </div>
+            <p className="journey-console-kicker">Career Signal</p>
+            <h3>Engineering path calibrated for production systems.</h3>
+            <div className="journey-stats">
+              <div>
+                <strong>{milestones.length}</strong>
+                <span>roles</span>
+              </div>
+              <div>
+                <strong>{totalHighlights}</strong>
+                <span>impact points</span>
+              </div>
+            </div>
+            <div className="journey-core-stack">
+              {coreTechnologies.map((tag) => (
+                <small key={tag}>{tag}</small>
+              ))}
+            </div>
+          </motion.aside>
+
+          <div className="journey-rail">
+            <motion.div className="journey-progress" style={{ height: progress }} />
+            {milestones.map((item, index) => (
+              <motion.article
+                className="milestone os-panel cursor-reactive"
+                initial={{ opacity: 0, x: index % 2 ? 54 : -54, rotateY: index % 2 ? -8 : 8, filter: 'blur(14px)' }}
+                whileInView={{ opacity: 1, x: 0, rotateY: 0, filter: 'blur(0px)' }}
+                whileHover={{ y: -8, rotateX: 2 }}
+                viewport={{ once: true, margin: '-120px' }}
+                transition={{ ...revealTransition, delay: index * 0.06 }}
+                key={`${item.company}-${item.period}`}
+              >
+                <div className="milestone-index">0{index + 1}</div>
+                <div className="milestone-topline">
+                  <span>
+                    <CalendarDays size={14} />
+                    {item.period}
+                  </span>
+                  <small>{item.location || 'On-site'}</small>
+                </div>
+                <h3>{item.company}</h3>
+                <p className="milestone-role">{item.role}</p>
+                <ul>
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight}>
+                      <CheckCircle2 size={16} />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="milestone-tech">
+                  {item.tech.map((tag) => (
+                    <small key={tag}>{tag}</small>
+                  ))}
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
